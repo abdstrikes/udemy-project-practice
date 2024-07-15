@@ -1,0 +1,35 @@
+.container{
+    height: 100%
+}
+
+.heart{
+    height: 100px;
+    margin: 100px;
+    width: 100px;
+    background-color: red;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.heart::after, .heart::before{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: red;
+    content: '';
+}
+
+.heart::after{
+    top: -50px;
+    
+}
+
+.heart::before{
+    left: -50px;
+}
+
+.heart:hover{
+    transform: scale(1.5);
+
+}

@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-4 pt-5" style="background-color: aquamarine;">
+            <h2>Welcome to dashboard</h2>
+        </div>
+
+        <div class="col-4 pt-5" style="background-color:blanchedalmond">
+
+            name:{{userName}}<br>
+            dept:{{userDepot}}
+
+
+        </div>
+
+        <div class="col -4 pt-5" style="background-color: rosybrown;">
+            <input type="text" [(ngModel)]="pname" autofocus (keyup.enter)="addNamesToArray()"
+                placeholder="Enter you text here">
+            <button class="btn btn-primary sm" [disabled]=" pname === '' " (click)="addNamesToArray()"> show entered
+                names </button>
+            <br>
+            <br>
+            <p>Your text : {{pname}} </p>
+
+            <p>characters entered : {{ pname.length }}/150</p>
+
+            <h4 *ngIf="pname.length > 16" style="color: red;"> characters limit is reached!!</h4>
+
+            <button class="btn btn-warning mb-2" (click)="clearArray()"> CLEAR </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Names entered </h1>
+        <ol>
+            <li *ngFor=" let names of namesArray" class="p-1">
+                {{names}}
+            </li>
+        </ol>
+    </div>
+
+    <div>
+        <div class="heart" *ngIf="!visib">
+
+        </div>
+        <div>
+            <button (click)="isVisible()">click here </button>
+
+        </div>
+    </div>
+
+    <span class="form-switch form-switch-padding">
+        <input class="form-check-input toggleheiwid cursor-pointer" 
+           type="checkbox"
+          id="flexSwitchCheckDefault">
+      </span>
+
+
+    <!-- <div *ngIf="!visib">this is target </div> -->
+</div>
